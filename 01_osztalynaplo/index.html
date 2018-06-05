@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Osztálynapló</title>
+</head>
+
+<body>
+
+    <!-- alkalmazás-->
+    <main id="app">
+        <h1>{{pageTitle}}</h1>
+
+        <!-- diáklista -->
+        <ul>
+            <li v-for="student in studentCollection">
+                {{student}}
+            </li>
+
+        </ul>
+
+        <!-- diák hozzáadása -->
+        <input type="text" v-model="newStudent">{{newStudent}}
+
+    </main>
+
+    <!-- vendor.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- app.js -->
+    <script defer src="scripts.js"></script>
+</body>
+
+</html>
