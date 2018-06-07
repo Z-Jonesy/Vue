@@ -13,6 +13,7 @@
     <!-- alkalmazás-->
     <main id="app">
         <h1>{{pageTitle}}</h1>
+        <input type="text" v-model='pageTitle'>
 
         <!-- diáklista -->
         <ul>
@@ -22,8 +23,8 @@
 
         </ul>
 
-        <!-- diák hozzáadása -->
-        <input type="text" v-model="newStudent">{{newStudent}}
+        <!-- diák hozzáadása 
+        <input type="text" v-model="newStudent">{{newStudent}}-->
 
     </main>
 
@@ -31,7 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- app.js -->
-    <script defer src="scripts.js"></script>
+    <script defer src="scripts_vue.js"></script>
 </body>
 
 </html>
