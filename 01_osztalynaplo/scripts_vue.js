@@ -3,14 +3,17 @@ let app = new Vue({
     data: {
         pageTitle: 'Osztálynapló',
         studentCollection: [
-            'Anna',
-            'Béla',
-            'Tomi',
-            'András',
-            'Panka',
-            'Dóri'
+            {name: 'Anna', gender: 'l' },
+            {name: 'Béla', gender: 'f' },
+            {name: 'Tomi', gender: 'f' },
+            {name: 'András', gender: 'f' },
+            {name: 'Panka', gender: 'l' },
+            {name: 'Dóri', gender: 'l' },
         ],
-        newStudent: ''
+        newStudent:{
+            name: '',
+            gender: ''
+        }
     },
     methods:{
         AddNewStudent(){
@@ -18,7 +21,7 @@ let app = new Vue({
                 return;
             }
             this.studentCollection.push(this.newStudent);
-            this.newStudent = '';
+            this.newStudent = {name: '', gender: ''};
         }
     }
 });

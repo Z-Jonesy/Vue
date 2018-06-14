@@ -24,7 +24,17 @@
         </ul>
 
         <!-- diák hozzáadása -->
-        <input type="text" v-model="newStudent" v-on:keydown.enter="AddNewStudent()">
+        <input type="text" v-model="newStudent.name" v-on:keydown.enter="AddNewStudent()">
+        <br>
+        <label>
+            <input type="radio" name="gender" v-model='newStudent.gender' value="l">
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="gender" v-model='newStudent.gender' value="f">
+        </label>
+        <br> érték: {{newStudent.gender}}
+
         <button v-on:click="AddNewStudent()">hozzáadás</button>
 
     </main>
