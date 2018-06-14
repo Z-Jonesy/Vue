@@ -9,6 +9,16 @@ let app = new Vue({
             'András',
             'Panka',
             'Dóri'
-        ]
+        ],
+        newStudent: ''
+    },
+    methods:{
+        AddNewStudent(){
+            if(!this.newStudent) {
+                return;
+            }
+            this.studentCollection.push(this.newStudent);
+            this.newStudent = '';
+        }
     }
 });
