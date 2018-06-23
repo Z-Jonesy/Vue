@@ -1,66 +1,93 @@
 // elemek összegyűjtése
 
-let inputNameFilter = document.getElementById('nameFilter');
-let resultList = document.getElementById('resultList');
+let inputItemName = document.getElementById('itemName');
+let inputItemCount = document.getElementById('itemCount');
+let inputItemBasePrice = document.getElementById('itemBasePrice');
+let buttonAdd = document.getElementById('buttonAdd');
+let listItemList = document.getElementById('itemList');
 
 // változók
-let nameFilter = '';
-let itemList = [
-    'Raging bull',
-    'Aliens',
-    'Reservoir dogs',
-    'Wall - e',
-    'The tresor of sierra madre',
-    'Whiplash',
-    'Some like it hot',
-    'Double indemnity',
-    'Taxi driver',
-    'Vertigo',
-    'On the waterfront',
-    'Saving private ryan',
-    'Inception',
-    'The lord of the rings',
-    'The silence of the lambs',
-];
 
-// elemek rendezése
-itemList.sort(function (a, b) {
-    return a.localeCompare(b);
-});
+let itemNames = ['tej', 'kenyér', 'gumicukor'];
+let itemCounts = [2, 5, 10];
+let itemBasePrices = [200, 200, 500];
 
 // feliratkozás
-inputNameFilter.addEventListener('keyup', OnInputKeyup);
+
+buttonAdd.addEventListener('click', OnButtonAddClick);
+inputItemName.addEventListener('keyup', OnInputKeyup);
+inputItemCount.addEventListener('keyup', OnInputKeyup);
+inputItemBasePrice.addEventListener('keyup', OnInputKeyup);
 
 // init
+
 RenderList();
 
-// render list
+// renderelés
+
 function RenderList() {
-    resultList.innerText = '';
-    console.clear();
+  ResetList();
 
-    let filteredItemList = itemList.filter(function (item, index) {
-        let lowerCaseItem = item.toLowerCase();
-        let lowerCaseNameFilter = nameFilter.toLowerCase();
-        let position = lowerCaseItem.indexOf(lowerCaseNameFilter);
+  let mappedList = itemNames.map(function(itemName, index) {
+    let itemString = [
+      // terméknév
+      itemName,
+      // darabszám x egységár
+      itemBasePrices[index] + ' Ft x ' + itemCounts[index] + ' db',
+      // teljes ár
+      itemBasePrices[index] * itemCounts[index] + ' Ft'
+    ].join(' - ');
+    return itemString;
+  });
 
-        return !(position == -1);
+  mappedList.forEach(function(itemText) {
+    RenderListItem(itemText);
+  });
+}
 
-    });
-
-    filteredItemList.forEach(function (item, index) {
-        RenderListItem(item);
-        console.log(item, index);
-    });
+function ResetList() {
+  listItemList.innerText = '';
 }
 
 function RenderListItem(text) {
-    let newListItem = document.createElement('li');
-    newListItem.innerText = text;
-    resultList.appendChild(newListItem);
+  let newItem = document.createElement('li');
+  newItem.innerText = text;
+  listItemList.appendChild(newItem);
 }
 
-function OnInputKeyup() {
-    nameFilter = inputNameFilter.value;
-    RenderList();
+// feliratkozó függvények
+
+function OnButtonAddClick() {
+  // hozzáadás
+  AddNewItem();
+}
+
+function OnInputKeyup(event) {
+  if (event.key == 'Enter') {
+    // hozzáadás
+    AddNewItem();
+  }
+}
+
+// egyéb függvények
+
+function AddNewItem() {
+  // validálás
+  if (
+    !(inputItemName.value && inputItemCount.value && inputItemBasePrice.value)
+  ) {
+    return;
+  }
+
+  // hozzáadás
+  itemNames.push(inputItemName.value);
+  itemCounts.push(inputItemCount.value);
+  itemBasePrices.push(inputItemBasePrice.value);
+
+  // takarítás
+  inputItemName.value = '';
+  inputItemCount.value = '';
+  inputItemBasePrice.value = '';
+
+  RenderList();
 }
