@@ -22,6 +22,13 @@ let app = new Vue({
             }
             this.studentCollection.push(this.newStudent);
             this.newStudent = {name: '', gender: ''};
+        },
+        GetColor(student){
+            let backgroundColor = student.gender == 'f' ? 'blue' : 'red';
+            return {
+                color: 'white',
+                backgroundColor: backgroundColor
+            }
         }
     }
 });

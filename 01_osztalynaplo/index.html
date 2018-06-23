@@ -18,13 +18,19 @@
         <!-- diáklista -->
         <ul>
             <li v-for="student in studentCollection">
-                {{student}}
+                <span v-bind:style="GetColor(student)">
+                    {{student.name}}
+                </span>
+                <span v-show="student.gender == 'f'">Labdát kap</span>
+                <span v-show="student.gender == 'l'">Virágot kap</span>
             </li>
+
 
         </ul>
 
         <!-- diák hozzáadása -->
         <input type="text" v-model="newStudent.name" v-on:keydown.enter="AddNewStudent()">
+
         <br>
         <label>
             <input type="radio" name="gender" v-model='newStudent.gender' value="l">
