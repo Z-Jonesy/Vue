@@ -28,7 +28,7 @@ let app = new Vue({
     },
     methods: {
         GetFilteredList(){
-            return list.filmCollection.filter(item => {
+            return this.filmCollection.filter(item => {
                 if (this.nameFilter == '') {
                     return true;
                 }
