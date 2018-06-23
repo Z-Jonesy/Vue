@@ -1,0 +1,25 @@
+{
+  "name": "vue-02-01",
+  "version": "1.0.0",
+  "description": "Elso npm kaland",
+  "main": "scripts-vue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server -a localhost -p 80 -s",
+    "open": "opener http:localhost",
+    "sass": "npx node-sass --output-style compressed src/main.scss -o dist -w",
+    "dev": "concurrently \"npm run sass\" \"npm run serve\" \"npm run open\""
+  },
+  "author": "z",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.9.0",
+    "opener": "^1.4.3"
+  }
+}

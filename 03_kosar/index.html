@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kosár</title>
+    <link rel="stylesheet" src="dist/main.css">
 </head>
 
 <body>
@@ -30,21 +31,28 @@
         <div>
             <button @click="AddNewItem()">Hozzáadás</button>
         </div>
+        
 
-        <!-- lista -->
-        <ul>
-            <li v-for="item in itemCollection">{{item.name}}</li>
-            <ul>
+         <!-- lista -->
+         <ul id="itemList">
+            <li v-for="item in itemCollection">
+                {{ item.name }}, {{ item.count }} x {{ item.baseprice }} Ft, {{ item.GetTotalPrice() }} Ft
+            </li>
+        </ul>-->
+        <!-- lista 
+        <ul id="itemList">
+            <li v-for="item in itemCollection">{{item.name}}
+            
                 <li>darabszám: {{item.count}} db</li>
                 <li>egységár: {{item.price}} Ft</li>
                 <li>összesen: {{item.GetTotalPrice()}} db</li>
-            </ul>
-        </ul>
+            </li>
+        </ul>-->
 
     </main>
 
     <!-- scripts.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- app JS -->
 
     <script src="src/cartitem.js"></script>
