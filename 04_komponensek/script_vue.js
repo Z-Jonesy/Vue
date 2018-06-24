@@ -1,6 +1,8 @@
 new Vue({
     el: "#app",
     data: {
-        message: "siker"
+        theme: "success",
+        offset: "1",
+        message: "siker",
     }
 })

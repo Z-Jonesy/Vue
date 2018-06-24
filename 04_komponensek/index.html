@@ -16,10 +16,17 @@
         <!-- oldalcím -->
         <h1>Vue komponens</h1>
 
-        {{ message }}
+        <!-- inputok -->
+        <div class="mb-3">
+            <input type="text" v-model="theme">
+            <input type="number" v-model="offset">
+        </div>
 
-        <counter-button offset="2" theme="success"></counter-button>
-
+        <!-- komponensek -->
+        <counter-button v-bind:offset="offset" v-bind:theme="theme"></counter-button>
+        <counter-button v-bind:offset="offset" v-bind:theme="theme"></counter-button>
+        <counter-button v-bind:offset="offset" v-bind:theme="theme"></counter-button>
+                
     </div>
 
     <!-- Vendor.js -->
