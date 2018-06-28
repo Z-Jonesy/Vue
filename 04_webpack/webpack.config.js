@@ -10,7 +10,7 @@ module.exports = {
     publicPath: '/dist/'
   },
   module: {
-      rule:[{
+      rules:[{
           test: /\.js$/,
           loader: 'babel-loader'
       },

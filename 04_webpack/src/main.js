@@ -1,11 +1,7 @@
-import TesztOsztaly from './TesztOsztaly';
 import Vue from "vue";
+import App from "./App.vue";
 
-new TesztOsztaly('Első név');
-
-let app = new Vue({
-    el: "App",
-    data: {
-        message: "sikerült"
-    }
+new Vue({
+    el: "#app",
+    render: h => h(App)
 });
