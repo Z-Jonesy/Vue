@@ -2,7 +2,7 @@
     <div>
 
     <Navigation></Navigation>
-    <div>{{ message }}</div>
+    <index></index>
     <Footer></Footer>
     </div>
 </template>
@@ -10,11 +10,14 @@
 <script>
 import Navigation from './components/Navigation.vue';
 import Footer from './components/Footer.vue';
+//pages
+import index from './pages/index.vue';
 
 export default {
     components:{
         Navigation,
-        Footer
+        Footer,
+        index
     },
     data: function(){
         return {message: 'OK'}
