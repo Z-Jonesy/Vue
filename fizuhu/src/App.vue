@@ -1,9 +1,12 @@
 <template>
     <div>
 
-    <Navigation></Navigation>
-    <index></index>
-    <Footer></Footer>
+        <Navigation></Navigation>
+            <keep-alive>
+                <component :is="currentPage"></component>
+            </keep-alive>      
+        <Footer></Footer>
+
     </div>
 </template>
 
@@ -12,15 +15,19 @@ import Navigation from './components/Navigation.vue';
 import Footer from './components/Footer.vue';
 //pages
 import index from './pages/index.vue';
+import blog from './pages/blog.vue';
 
 export default {
     components:{
         Navigation,
         Footer,
-        index
+        index,
+        blog
     },
     data: function(){
-        return {message: 'OK'}
+        return {
+            currentPage: "blog"
+        };
     }
 }
 </script>
