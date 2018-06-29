@@ -1,5 +1,5 @@
 <template>
-    <button @click="Increase()" v-bind:class="classes">{{ counter }}</button>
+    <button @click="Increase()" v-bind:class="classes">{{ counterPlusOffset }}</button>
     
 </template>
 
@@ -18,6 +18,9 @@ export default {
     },
     computed:{
         classes(){
+            return ["btn", "btn-", this.theme];
+        },
+        counterPlusOffset(){
             return this.counter + this.offset
         }
     }
