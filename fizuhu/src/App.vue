@@ -42,8 +42,8 @@ export default {
         });
     },
     methods: {
-        OnPageChange(){
-            
+        OnPageChange(newPage){
+            this.currentPage = newPage;
         }
     }
 }

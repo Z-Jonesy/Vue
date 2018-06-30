@@ -13,27 +13,6 @@
             {{ item.name }}
           </a>
         </li>
-        
-        <!-- 
-        <li class="nav-item px-3">
-          <a class="nav-link" href="kedvenc-stat.html">Kedvenc statisztikáink</a>
-        </li>
-        <li class="nav-item px-3">
-          <a class="nav-link" href="kerdoivek.html">Kérdőívek</a>
-        </li>
-        <li class="nav-item px-3">
-          <a class="nav-link" href="rolunk.html">Rólunk</a>
-        </li>
-        <li class="nav-item dropdown mr-5 ml-3">
-          <a class="nav-link dropdown-toggle btn-group mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Profil</a>
-          <div class="dropdown-menu  text-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="profilom.html">Profilom</a>
-            <a class="dropdown-item" href="terkep.html">Fizu-térkép</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Kijelentkezés</a>
-          </div>
-        </li> -->
       </ul>
     </div>
   </nav>
