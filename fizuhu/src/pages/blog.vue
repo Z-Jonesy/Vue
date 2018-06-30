@@ -1,149 +1,17 @@
 <template>
     <div>
-      <div class="jumbotron jumbotron-fluid mb-0">
-        <div class="container">
-          <h1 class="">Mennyit keresnék, ha...?</h1>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum fugiat sequi, placeat dolor aliquid porro a quisquam ut, accusantium quasi assumenda maiores ipsum vel.</p>
-          <a class="btn btn-green btn-lg mt-3" href="#" role="button">Tovább a kérdőívekre!</a>
-        </div>
-      </div>
 
       <div class="container">
+       <div class="row">
+        <main class="col-12 col-md-9">
+          <div class="row px-lg-5">
+           <div class="card-deck mt-5">
+              <div class="row">
+                
+                <BlogPostCard v-for="post in postCollection" :post="post" :key="post.id"></BlogPostCard>
 
-      <div class="row">
-
-      <main class="col-12 col-md-9">
-
-        <div class="row px-lg-5">
-
-          <div class="card-deck mt-5">
-
-      <div class="row">
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep2.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
               </div>
-            </div>
-
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep3.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="row">
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep4.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep1.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="row">
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep5.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep6.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="row">
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep7.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep1.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="row">
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep1.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-lg-6 my-3">
-              <div class="card blog-card">
-                <img class="card-img-top" src="../img/blog_kep1.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-uppercase">Lorem ipsum dolor.</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione at, pariatur! Temporibus enim, nemo architecto.</p>
-                  <p class="card-text"><small class="text-muted">2018.01.03</small></p>
-                  <a href="cikk.html" class="float-right">Tovább olvasom...</a>
-                </div>
-              </div>
-            </div>
-      </div>
-        </div>
+          </div>
 
             <nav aria-label="Page navigation example" class="col-11 mt-5">
             <ul class="pagination">
@@ -155,7 +23,7 @@
             </ul>
           </nav>
 
-      </div>
+        </div>
       </main>
 
       <aside id="aside" class="col-12 col-md-3 mt-5">
@@ -198,8 +66,23 @@
 </template>
 
 <script>
+import DataService from '../DataService';
+import BlogPostCard from '../components/BlogPostCard.vue';
+
 export default {
-     
+  components: {
+    BlogPostCard
+  },
+     data(){
+       return {
+         postCollection: []
+       };
+     },
+     created(){
+       DataService.GetPosts().then( posts => {
+         this.postCollection = posts;
+       });
+     }
 }
 </script>
 
