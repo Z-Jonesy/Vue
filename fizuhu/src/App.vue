@@ -27,7 +27,7 @@ export default {
     },
     data: function(){
         return {
-            currentPage: "blog",
+            currentPage: "index",
             navItems: []
         };
     },
