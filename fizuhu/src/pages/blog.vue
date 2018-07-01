@@ -5,7 +5,7 @@
        <div class="row">
         <main class="col-12 col-md-9">
           <div class="row px-lg-5">
-           <div class="card-deck mt-5">
+           <div class="card-deck my-5">
               <div class="row">
                 
                 <BlogPostCard v-for="post in postCollection" :post="post" :key="post.id"></BlogPostCard>
@@ -35,17 +35,9 @@
                 </form>
                 <!-- /Search -->
 
-              <div class="mt-5">
-                <h3>Kategóriák</h3>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a href="#">Kategória1 (27)</a></li>
-                  <li class="list-group-item"><a href="#">Kategória2 (42)</a></li>
-                  <li class="list-group-item"><a href="#">Kategória3 (74)</a></li>
-                  <li class="list-group-item"><a href="#">Kategória4 (6)</a></li>
-                  <li class="list-group-item"><a href="#">Kategória5 (11)</a></li>
-                </ul>
-              </div>
-                <!-- /Category -->
+                <BlogPostCategories :postCollection="postCollection"></BlogPostCategories>
+
+                <!-- /Category 
                 <div class="my-5">
                   <h3 class="mb-3">Tags</h3>
                 <a href="#" class="badge badge-primary badge-pill p-2 m-1">Informatika</a>
@@ -56,7 +48,7 @@
                 <a href="#" class="badge badge-info badge-pill p-2 m-1">Info</a>
                 <a href="#" class="badge badge-light badge-pill p-2 m-1">Light</a>
                 <a href="#" class="badge badge-dark badge-pill p-2 m-1">Dark</a>
-              </div>
+              </div> -->
 
               </aside>
 
@@ -68,10 +60,11 @@
 <script>
 import DataService from '../DataService';
 import BlogPostCard from '../components/BlogPostCard.vue';
+import BlogPostCategories from '../components/BlogPostCategories.vue';
 
 export default {
   components: {
-    BlogPostCard
+    BlogPostCard, BlogPostCategories
   },
      data(){
        return {
