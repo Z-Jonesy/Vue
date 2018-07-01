@@ -8,7 +8,7 @@
            <div class="card-deck my-5">
               <div class="row">
                 
-                <BlogPostCard v-for="post in postCollection" :post="post" :key="post.id"></BlogPostCard>
+                <BlogPostCard v-for="post in filteredPostCollection" :post="post" :key="post.id"></BlogPostCard>
 
               </div>
           </div>
@@ -35,7 +35,9 @@
                 </form>
                 <!-- /Search -->
 
-                <BlogPostCategories :postCollection="postCollection"></BlogPostCategories>
+                <BlogPostCategories
+                 :postCollection="postCollection"
+                 @categoryChange="OnCategoryChange"></BlogPostCategories>
 
                 <!-- /Category 
                 <div class="my-5">
@@ -68,13 +70,42 @@ export default {
   },
      data(){
        return {
-         postCollection: []
+         postCollection: [],
+         filters: {}
        };
      },
      created(){
        DataService.GetPosts().then( posts => {
          this.postCollection = posts;
        });
+     },
+     computed:{
+       filteredPostCollection(){
+         const filterKeyCollection = Object.keys(this.filters);
+
+         if(filterKeyCollection.length === 0){
+           return this.postCollection;
+         }
+
+         const filteredPosts = this.postCollection.filter(post => {
+           const passingFilters = filterKeyCollection.filter(filterKey => {
+             return post[filterKey] == this.filters[filterKey];
+           });
+           return passingFilters.length == filterKeyCollection.length;
+         });
+         return filteredPosts;
+       }
+     },
+
+     methods:{
+       OnCategoryChange(newCategory){
+         if(newCategory){
+          this.$set(this.filters, "category", newCategory);
+         } else{
+           this.$delete(this.filters, "category");
+         }
+         
+       }
      }
 }
 </script>
