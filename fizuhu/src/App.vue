@@ -2,9 +2,10 @@
     <div>
 
         <Navigation :itemCollection="navItems" @pageChange = "OnPageChange"></Navigation>
-            <keep-alive>
-                <component :is="currentPage"></component>
-            </keep-alive>      
+
+    
+        <router-view></router-view>
+
         <Footer></Footer>
 
     </div>
@@ -27,18 +28,20 @@ export default {
     },
     data: function(){
         return {
-            currentPage: "blog",
+            currentPage: "",
             navItems: []
         };
     },
     created(){
         this.navItems.push({
             name: "Főoldal",
-            id: "index"
+            id: "index",
+            path: "/"
         });
         this.navItems.push({
             name: "Blog",
-            id: "blog"
+            id: "blog",
+            path: "/blog"
         });
     },
     methods: {
