@@ -4,7 +4,7 @@
     "description": "",
     "main": "main.js",
     "scripts": {
-        "dev": "webpack-dev-server --open --hot --hide-modules",
+        "dev": "webpack-dev-server -w --open --hot",
         "build": "webpack --progress --hide-modules",
         "backend": "json-server ./backend/db.json -w"
     },

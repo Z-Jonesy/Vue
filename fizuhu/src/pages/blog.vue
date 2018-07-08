@@ -8,7 +8,9 @@
            <div class="card-deck my-5">
               <div class="row">
                 
-                <BlogPostCard v-for="post in filteredPostCollection" :post="post" :key="post.id"></BlogPostCard>
+                <BlogPostCard v-for="post in filteredPostCollection" :post="post" :key="post.id">
+
+                </BlogPostCard>
 
               </div>
           </div>
@@ -28,6 +30,7 @@
 
       <aside id="aside" class="col-12 col-md-3 mt-5">
 
+          
                 <!-- Search -->
                 <form class="form-inline">
                   <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search" aria-label="Keresés">
@@ -81,19 +84,13 @@ export default {
      },
      computed:{
        filteredPostCollection(){
-         const filterKeyCollection = Object.keys(this.filters);
-
-         if(filterKeyCollection.length === 0){
-           return this.postCollection;
+         if(!this.$route.params.categoryName){
+            return this.postCollection;
          }
-
-         const filteredPosts = this.postCollection.filter(post => {
-           const passingFilters = filterKeyCollection.filter(filterKey => {
-             return post[filterKey] == this.filters[filterKey];
-           });
-           return passingFilters.length == filterKeyCollection.length;
-         });
-         return filteredPosts;
+        
+        return this.postCollection.filter(post => {
+          return post.category == this.$route.params.categoryName
+        });
        }
      },
 

@@ -8,7 +8,11 @@
 
             <div class="d-flex d-row justify-content-between align-items-center">
                 <small class="text-muted">{{ post.date }}</small>
-                <a href="" class="m-0">Tovább olvasom...</a>
+                <router-link 
+                    :to="{ name: 'blogPost', params: {postID: post.id}}"
+                    class="mt-0">
+                    Tovább olvasom...
+                </router-link>
             </div>
         </div>
         </div>
