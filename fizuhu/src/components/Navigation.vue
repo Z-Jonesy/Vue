@@ -20,12 +20,13 @@
 </template>
 
 <script>
+import navItems from '../navItems';
+
 export default {
-    props: ["itemCollection"],
-    methods: {
-      OnItemClick(id){
-        this.$emit('pageChange');
-      }
+    data(){
+      return {
+        itemCollection: navItems
+      };
     }
 }
 </script>
