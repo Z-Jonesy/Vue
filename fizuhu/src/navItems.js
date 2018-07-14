@@ -19,6 +19,12 @@ export default [
     },
 
     {
+        name: "Fizu térkép",
+        id: "statistics",
+        path: "/statistics"
+    },
+
+    {
         name: "Kapcsolat",
         id: "contact",
         path: "/contact"

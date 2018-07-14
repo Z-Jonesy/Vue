@@ -67,7 +67,7 @@
             </div>
 
             <div class="col-12 alert alert-danger" role="alert" v-if="alerts.fail">
-                Valami elromlozz üzenetküldés közben. <br>
+                Valami elromlott üzenetküldés közben. <br>
                 Kérlek írd meg nekünk a hiba körülményeit ide: 
                 <a href="mailto:support@fizu.hu">support@fizu.hu</a>
             </div>
@@ -106,8 +106,13 @@ export default {
             if (missingValues.length == 0) {
                 event.preventDefault();
 
-                this.ShowThanksAlert();
-                this.ShowFailAlert();
+                DataService.PostSurveyResponse(this.fields).then(success => {
+                   if(success) {
+                        this.ShowThanksAlert();
+                       } else{
+                        this.ShowFailAlert();
+                       }
+                });
             }
         },
         HideAllAlert() {
